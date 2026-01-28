@@ -1,0 +1,13 @@
+pydantic==2.11.7
+python-dotenv==1.1.1
+PyYAML==6.0.2
+langchain>=0.1.5
+langchain-openai>=0.0.5
+langchain-experimental>=0.0.50
+langchain-community>=0.0.20
+qdrant-client==1.7.0
+beautifulsoup4==4.13.4
+lxml==6.0.0
+numpy==1.26.3
+scikit-learn==1.4.1.post1
+requests==2.32.4

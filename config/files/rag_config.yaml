@@ -1,0 +1,35 @@
+﻿azure:
+  endpoint: ""  # Set via AZURE_OPENAI_ENDPOINT env var
+  api_key: ""  # Set via AZURE_OPENAI_API_KEY env var
+  api_version: "2024-02-15-preview"
+  embedding_deployment: "text-embedding-large"
+  embedding_model: "text-embedding-3-large"
+  embedding_dimensions: null  # null for default, or set specific dimension
+
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
+  use_recursive: true
+  use_semantic: true
+  use_fixed: true
+  semantic_threshold: 0.5
+
+vector_store:
+  store_type: "qdrant"  # "qdrant" or "in_memory"
+  qdrant_url: "http://localhost:6333"  # Set via QDRANT_URL env var (default: Docker instance)
+  qdrant_api_key: ""  # Set via QDRANT_API_KEY env var (optional, for secured Qdrant)
+  qdrant_path: "./qdrant_storage"  # Local path for Qdrant storage (only if not using Docker)
+  qdrant_collection_name: "rag-collection"  # Collection name in Qdrant
+  qdrant_vector_size: null  # Auto-detected from embedder if null
+
+hybrid_search:
+  semantic_weight: 0.7
+  keyword_weight: 0.3
+  top_k: 5
+  rerank: true
+
+data_source:
+  html_output_dir: "../SmartCrawl/html_output"
+  downloads_dir: "../SmartCrawl/downloads"
+  include_processed: true
+  include_raw_html: false
